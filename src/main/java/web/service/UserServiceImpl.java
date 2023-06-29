@@ -8,24 +8,15 @@ import web.model.User;
 
 import java.util.List;
 @Repository
-
 public class UserServiceImpl implements UserService{
     @Autowired
     private UserDao userDao;
-
     @Transactional
     @Override
-    public void add(User user) {
-
-        userDao.add(user);
-    }
-
+    public void add(User user) { userDao.add(user); }
     @Transactional(readOnly = true)
     @Override
-    public List<User> listUser() {
-
-        return userDao.listUsers();
-    }
+    public List<User> listUser() { return userDao.listUsers(); }
     @Transactional
     @Override
     public User show(int id) {
